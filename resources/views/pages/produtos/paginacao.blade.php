@@ -5,12 +5,15 @@
         <h1 class="h2">Produtos</h1>
     </div>
     <div class="mb-3">
-          <form class="d-flex" action="" method="GET">
+          <form class="d-flex" action="{{ route('produto.index') }}" method="GET">
             <button class="btn btn-outline-primary me-4" type="submit">Pesquisar</button>
-            <input class="form-control me-4" type="search" placeholder="Digite o nome do produto a ser pesquisado" aria-label="Search">
+            <input class="form-control me-4" name="pesquisar"  type="search" placeholder="Digite o nome do produto a ser pesquisado" aria-label="Search">
             <a type="button" href="" class="btn btn-primary float-end">Cadastrar</a>
           </form>
           <div class="table-responsive mt-4">
+            @if ($findProduto->isEmpty())
+                <p><strong>Não foi encontrado nenhum registro com o nome digitado!</strong></p>
+            @else
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
@@ -36,6 +39,7 @@
                 @endforeach
               </tbody>
             </table>
+            @endif
           </div>
     </div>
 @endsection
