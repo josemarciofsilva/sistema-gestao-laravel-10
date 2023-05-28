@@ -31,7 +31,7 @@
                             <a href="" class="btn btn-primary btn-sm mr-4">
                                 Editar
                             </a>
-                            <a href="" class="btn btn-danger btn-sm ml-4">
+                            <a href="{{ route('produto.delete') }}" class="btn btn-danger btn-sm ml-4">
                                 Excluir
                             </a>
                         </td>
